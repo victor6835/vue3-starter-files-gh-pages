@@ -1,21 +1,22 @@
 <!DOCTYPE html><html><head><title>環境安裝</title><meta name="viewport" content="width=device-width, initial-scale=1"><link href="images/favicon.ico" rel="shortcut icon"><meta charset="UTF-8"><script src="/javascripts/vendor.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.37/vue.global.js"></script></head><body class="bg-lighter">
+
 <div class="container main my-5"><div class="row"><main class="col post">
 <!-- 章節標題 --><div class="mb-4"><h1 class="mt-0 text-muted">環境安裝</h1><small>檔名：<code>createApp.html</code></small></div>
 <!-- 🔥🔥練習開始🔥🔥 -->
-<!-- <div id="app">
-  {{ counter }}
+<div id="app">
+  {{ number }}
   {{ text }}
 </div>
 <script>
-Vue.createApp({
-  data() {
-    return {
-      counter: 0,
-      text: '這裡有一段文字'
-    }
-  }
-}).mount('#app')
-</script> -->
+  Vue.createApp({
+    data() {
+      return {
+        number:2.5,
+        text: '條悟'
+      }
+    },
+  }).mount('#app')
+</script>
 <!-- 🙇🙇練習結束🙇🙇 -->
 </main>
   
@@ -127,5 +128,6 @@ Vue.createApp({
 </footer>
 <link rel="stylesheet" href="/stylesheets/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 </body>
 </html>
