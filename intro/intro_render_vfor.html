@@ -14,7 +14,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr></tr>
+      <tr v-for="item in products" ::key="item.id"  v-bind:class="{'table-success': item.onStock}">
+        <td>{{ item.name }}</td>
+        <td><img v-bind:src="item.imageUrl" alt=""></td>
+        <td>
+          <input type="checkbox" v-model="item.onStock">
+          <!-- 用checkbox 來切換onStock 的 true 或 false -->
+        </td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
   <form>
