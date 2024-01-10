@@ -24,7 +24,7 @@
           <input type="checkbox" v-model="item.onStock">
         </td>
         <td>
-          <button type="button" class="btn btn-outline-primary"
+          <button type="button" class="btn btn-outline-primary" v-on:click="editItem(item)"
           >修改</button>
         </td>
       </tr>
@@ -77,12 +77,26 @@ const App = {
     }
   },
   methods: {
+    editItem(item1) {
+      this.temp = {...item1};
+    },
     confirmEdit() {
+      if(!this.temp.id){//判斷式：目的是使新增與編緝共用「更新」按鈕，而新增項目是沒有id的，因此以此來作為判斷
+      //新增
       this.temp.id = new Date().getTime();
       this.temp.onStock = false;
       this.products.push(this.temp);
       this.temp = {};
+    }else{//如果不是新增行為，則先針對products中每個item做forEach，去撈取比對id
+      this.products.forEach((item, i) => {
+        if(item.id === this.temp.id){
+          this.products[i] = this.temp;
+          console.log(i);
+        }
+      });
+      this.temp = {};
     }
+  }
   },
   created() {
     this.products = products;
